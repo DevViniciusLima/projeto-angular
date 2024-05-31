@@ -1,0 +1,20 @@
+<h1>Dados do Livro</h1>
+<form (submit)="incluir()" ngNativeValidate>
+    <div class="">
+        <label for="titulo" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="titulo" [(ngModel)]="livro.titulo" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="">
+        <label for="resumo" class="form-label">Resumo</label>
+        <textarea class="form-control" name="resumo" id="resumo" [(ngModel)]="livro.resumo" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <label for="editoras" class="form-label">Editoras</label>
+    <select id="editoras" class="form-select" [(ngModel)]="livro.codEditora" [ngModelOptions]="{standalone: true}">
+        <option [value]="item.codEditora" *ngFor="let item of editoras">{{item.nome}}</option>
+    </select>
+    <div class="">
+        <label for="autores" class="form-label">Autores</label>
+        <textarea class="form-control" name="autores" id="autores" [(ngModel)]="autoresForm" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Dados</button>
+</form>
